@@ -1,8 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "mb10A1MtxWZHlQ9PpD9CFoEzfr9sH7W8AW4ReCj8yx34TpEPNAWCAjPo8Vx5jCO4A81suUt76/I73ugiWwVhig==",
+  "dgSpecHash": "48ivgIINLKLpXwTOxn7BE7tbMT+m1MRbWdN/WS1apkO0idgVI4wTDdQJ+bbd2PX0coM0BD8KLeQz99KHp+iXLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Terence\\Projects\\Fable.Form.Simple.MaterialUI\\Fable.Form.Simple.MaterialUI\\Fable.Form.Simple.MaterialUI.fsproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.ast\\3.1.1\\fable.ast.3.1.1.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.browser.blob\\1.1.4\\fable.browser.blob.1.1.4.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.browser.dom\\2.4.4\\fable.browser.dom.2.4.4.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.browser.event\\1.4.5\\fable.browser.event.1.4.5.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.browser.gamepad\\1.0.3\\fable.browser.gamepad.1.0.3.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.browser.webstorage\\1.0.4\\fable.browser.webstorage.1.0.4.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.core\\3.2.8\\fable.core.3.2.8.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.elmish\\3.1.0\\fable.elmish.3.1.0.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.form\\1.1.0\\fable.form.1.1.0.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.form.simple\\1.1.0\\fable.form.simple.1.1.0.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fable.react\\7.4.1\\fable.react.7.4.1.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\feliz\\1.49.0\\feliz.1.49.0.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\feliz.compilerplugins\\1.5.0\\feliz.compilerplugins.1.5.0.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\feliz.materialui\\1.2.6\\feliz.materialui.1.2.6.nupkg.sha512",
+    "C:\\Users\\Terence\\.nuget\\packages\\fsharp.core\\5.0.2\\fsharp.core.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

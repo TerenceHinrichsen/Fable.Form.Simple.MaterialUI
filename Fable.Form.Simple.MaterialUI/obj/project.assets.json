@@ -1,11 +1,599 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Fable.AST/3.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Fable.AST.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.AST.dll": {}
+        }
+      },
+      "Fable.Browser.Blob/1.1.4": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Browser.Blob.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Browser.Blob.dll": {}
+        }
+      },
+      "Fable.Browser.Dom/2.4.4": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Browser.Blob": "1.1.4",
+          "Fable.Browser.Event": "1.4.4",
+          "Fable.Browser.WebStorage": "1.0.4",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Browser.Dom.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Browser.Dom.dll": {}
+        }
+      },
+      "Fable.Browser.Event/1.4.5": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Browser.Gamepad": "1.0.3",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Browser.Event.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Browser.Event.dll": {}
+        }
+      },
+      "Fable.Browser.Gamepad/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Browser.Gamepad.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Browser.Gamepad.dll": {}
+        }
+      },
+      "Fable.Browser.WebStorage/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Browser.Event": "1.4.4",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Browser.WebStorage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Browser.WebStorage.dll": {}
+        }
+      },
+      "Fable.Core/3.2.8": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.Core.dll": {}
+        }
+      },
+      "Fable.Elmish/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.Elmish.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.Elmish.dll": {}
+        }
+      },
+      "Fable.Form/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Core": "3.2.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.Form.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.Form.dll": {}
+        }
+      },
+      "Fable.Form.Simple/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Core": "3.2.5",
+          "Fable.Elmish": "3.1.0",
+          "Fable.Form": "1.1.0",
+          "Feliz": "1.40.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.Form.Simple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.Form.Simple.dll": {}
+        }
+      },
+      "Fable.React/7.4.1": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Browser.Dom": "2.4.4",
+          "Fable.Core": "3.2.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.React.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.React.dll": {}
+        }
+      },
+      "Feliz/1.49.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.Core": "3.1.5",
+          "Fable.React": "7.4.0",
+          "Feliz.CompilerPlugins": "1.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Feliz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Feliz.dll": {}
+        }
+      },
+      "Feliz.CompilerPlugins/1.5.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Fable.AST": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Feliz.CompilerPlugins.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Feliz.CompilerPlugins.dll": {}
+        }
+      },
+      "Feliz.MaterialUI/1.2.6": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.0",
+          "Feliz": "1.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Feliz.MaterialUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Feliz.MaterialUI.dll": {}
+        }
+      },
+      "FSharp.Core/5.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FSharp.Core.dll": {}
+        },
+        "resource": {
+          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/netstandard2.0/FSharp.Core.xml": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": true,
+            "outputPath": "FSharp.Core.xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Fable.AST/3.1.1": {
+      "sha512": "enqXkQiqEOH78qQZDZSlOSEoFIZ9FtXJHd1rp85sjSZQo847uE+i8KxX4JbYitjtIlSXum/hgh8R67ivfKxI+w==",
+      "type": "package",
+      "path": "fable.ast/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.ast.3.1.1.nupkg.sha512",
+        "fable.ast.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Fable.AST.dll",
+        "lib/netstandard2.0/Fable.AST.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Browser.Blob/1.1.4": {
+      "sha512": "+6aq2ClPFbh/wFEtKuuIPwoZwi2GlUJ6RRykT0R+i95ZmK22nfE6iWpP+jfKxDnGgrm2AGC+btobAHWXbkC1Sw==",
+      "type": "package",
+      "path": "fable.browser.blob/1.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.browser.blob.1.1.4.nupkg.sha512",
+        "fable.browser.blob.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Browser.Blob.dll",
+        "lib/netstandard2.0/Browser.Blob.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Browser.Dom/2.4.4": {
+      "sha512": "wFGefU1Idqkwa6kKdvz5oyHL5yP+i+cvTHPeJGlF22fnqOozFurFIuPqGToqpgl9DfyWr7MyNvTiLFOkfXNqnA==",
+      "type": "package",
+      "path": "fable.browser.dom/2.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.browser.dom.2.4.4.nupkg.sha512",
+        "fable.browser.dom.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Browser.Dom.dll",
+        "lib/netstandard2.0/Browser.Dom.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Browser.Event/1.4.5": {
+      "sha512": "fycXHtezvPWjR9VANh+SflwkFhJcvnFi7LDpog7HRJXIGBal3QWaFAZ2tYOvAZncDetWpjxnuIVN89mhktqpoA==",
+      "type": "package",
+      "path": "fable.browser.event/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.browser.event.1.4.5.nupkg.sha512",
+        "fable.browser.event.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Browser.Event.dll",
+        "lib/netstandard2.0/Browser.Event.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Browser.Gamepad/1.0.3": {
+      "sha512": "3mIdAR8uy7eQoL+Nyp72OVWnIbTegoFD6yCvnqaHeWE2MZ3+Lc9EPMKDiHjX3VbImd1uQI57zg+hQJ6MTekgEA==",
+      "type": "package",
+      "path": "fable.browser.gamepad/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.browser.gamepad.1.0.3.nupkg.sha512",
+        "fable.browser.gamepad.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Browser.Gamepad.dll",
+        "lib/netstandard2.0/Browser.Gamepad.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Browser.WebStorage/1.0.4": {
+      "sha512": "kxKI1nM4TWIRjp4X0QfdbgdU3p1ite5E/to3/RqotnV5BTmS9Wl+yX38L0S4CTbnU+I6v8aPLYlZ/BKmtxggXQ==",
+      "type": "package",
+      "path": "fable.browser.webstorage/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.browser.webstorage.1.0.4.nupkg.sha512",
+        "fable.browser.webstorage.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Browser.WebStorage.dll",
+        "lib/netstandard2.0/Browser.WebStorage.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Core/3.2.8": {
+      "sha512": "6CvBXLf6CVMiPXsabhJMfweHeXncLz1NrVdfjNAdcLOlRr8uRunkudN4zOTdA6t80dJyqUhTVXTWLyuIdyRJkg==",
+      "type": "package",
+      "path": "fable.core/3.2.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.core.3.2.8.nupkg.sha512",
+        "fable.core.nuspec",
+        "fable_logo.png",
+        "lib/netstandard2.0/Fable.Core.dll",
+        "lib/netstandard2.0/Fable.Core.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Elmish/3.1.0": {
+      "sha512": "g6oAwxcKz4mIYvVlaPSrF+YoHrraJf8zpCK7cZpwtAHcbJdZkCmX9jaCYc85PaGOXywbUsulBOH5794HelUqZg==",
+      "type": "package",
+      "path": "fable.elmish/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.elmish.3.1.0.nupkg.sha512",
+        "fable.elmish.nuspec",
+        "fable/Fable.Elmish.fsproj",
+        "fable/cmd.fs",
+        "fable/prelude.fs",
+        "fable/program.fs",
+        "fable/ring.fs",
+        "lib/netstandard2.0/Fable.Elmish.dll",
+        "lib/netstandard2.0/Fable.Elmish.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Form/1.1.0": {
+      "sha512": "/k6trmVOtXV0dfWofY1NwZjybzOFn7Lam8/cXBEUPhR/PJx3GANdg7tlN/xRufiyO6JBKmGbEfx02bg3ZUlNkw==",
+      "type": "package",
+      "path": "fable.form/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "fable.form.1.1.0.nupkg.sha512",
+        "fable.form.nuspec",
+        "fable/Base.fs",
+        "fable/Base.fsi",
+        "fable/Error.fs",
+        "fable/Error.fsi",
+        "fable/Extensions.fs",
+        "fable/Extensions.fsi",
+        "fable/Fable.Form.fsproj",
+        "fable/Field.fs",
+        "fable/Field.fsi",
+        "fable/obj/Debug/netstandard2.0/Fable.Form.AssemblyInfo.fs",
+        "fable/obj/Release/netstandard2.0/Fable.Form.AssemblyInfo.fs",
+        "lib/netstandard2.0/Fable.Form.dll",
+        "lib/netstandard2.0/Fable.Form.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.Form.Simple/1.1.0": {
+      "sha512": "36lnb6ToPxea5Q/6RTQPFr8M/3aL78aW6adNHbESy6clZMhm6K4wQoY1EWOyUeJlvMYegHPmrdorchKZu1ME9w==",
+      "type": "package",
+      "path": "fable.form.simple/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "fable.form.simple.1.1.0.nupkg.sha512",
+        "fable.form.simple.nuspec",
+        "fable/CheckboxField.fs",
+        "fable/CheckboxField.fsi",
+        "fable/Fable.Form.Simple.fsproj",
+        "fable/Form.fs",
+        "fable/Form.fsi",
+        "fable/FormList.fs",
+        "fable/FormList.fsi",
+        "fable/RadioField.fs",
+        "fable/RadioField.fsi",
+        "fable/SelectField.fs",
+        "fable/SelectField.fsi",
+        "fable/TextField.fs",
+        "fable/TextField.fsi",
+        "fable/obj/Debug/netstandard2.0/Fable.Form.Simple.AssemblyInfo.fs",
+        "fable/obj/Release/netstandard2.0/Fable.Form.Simple.AssemblyInfo.fs",
+        "lib/netstandard2.0/Fable.Form.Simple.dll",
+        "lib/netstandard2.0/Fable.Form.Simple.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Fable.React/7.4.1": {
+      "sha512": "OYjem6Ix5KBwYkQCzn8RIkCN+Zb94YEZ0QAZasC9raagmgigEfFsAePpXeix/UxsYn6HRU4TSl4AhWadKA/s6A==",
+      "type": "package",
+      "path": "fable.react/7.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "fable.react.7.4.1.nupkg.sha512",
+        "fable.react.nuspec",
+        "fable/Fable.React.Extensions.fs",
+        "fable/Fable.React.FunctionComponent.fs",
+        "fable/Fable.React.Helpers.fs",
+        "fable/Fable.React.Hooks.fs",
+        "fable/Fable.React.Isomorphic.fs",
+        "fable/Fable.React.Props.fs",
+        "fable/Fable.React.ReactiveComponents.fs",
+        "fable/Fable.React.Standard.fs",
+        "fable/Fable.React.fs",
+        "fable/Fable.React.fsproj",
+        "fable/Fable.ReactDom.fs",
+        "fable/Fable.ReactServer.fs",
+        "fable_logo.png",
+        "lib/netstandard2.0/Fable.React.dll",
+        "lib/netstandard2.0/Fable.React.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Feliz/1.49.0": {
+      "sha512": "T4jSVGAXOi4jVeBdbzeNJTDDaTllll/Y84imEYYnguqaBNg+1iLAq7AXgcGBuKEOWyW2j3xJ3XCwvbDfEajUbA==",
+      "type": "package",
+      "path": "feliz/1.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable/BorderStyle.fs",
+        "fable/Colors.fs",
+        "fable/Feliz.fsproj",
+        "fable/Fonts.fs",
+        "fable/GridTypes.fs",
+        "fable/Html.fs",
+        "fable/Interop.fs",
+        "fable/Key.fs",
+        "fable/Length.fs",
+        "fable/Locale.fs",
+        "fable/Properties.fs",
+        "fable/React.fs",
+        "fable/ReactDOM.fs",
+        "fable/ReactInterop.js",
+        "fable/ReactTypes.fs",
+        "fable/StyleTypes.fs",
+        "fable/Styles.fs",
+        "fable/Svg.fs",
+        "fable/TextDecorationLine.fs",
+        "fable/TextDecorationStyle.fs",
+        "fable/Transform.fs",
+        "fable/TransitionProperty.fs",
+        "fable/Types.fs",
+        "feliz.1.49.0.nupkg.sha512",
+        "feliz.nuspec",
+        "lib/netstandard2.0/Feliz.dll",
+        "lib/netstandard2.0/Feliz.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Feliz.CompilerPlugins/1.5.0": {
+      "sha512": "zOO/CFX+A24dHnj/XAg81f6O5Ehk9vHk4YSzRZqBejeSJoecQNvcqX/WE7VbpvDenYYAj4ufLI+MecWMipeULg==",
+      "type": "package",
+      "path": "feliz.compilerplugins/1.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "feliz.compilerplugins.1.5.0.nupkg.sha512",
+        "feliz.compilerplugins.nuspec",
+        "lib/netstandard2.0/Feliz.CompilerPlugins.dll",
+        "lib/netstandard2.0/Feliz.CompilerPlugins.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "Feliz.MaterialUI/1.2.6": {
+      "sha512": "THP0u9/is1pCfd1/E3ONImiXeeT6+PTkGgNWnvJBHHpg/lTXpWYvXNLQFol/Xzfd2HmQJEBgUB2IkM2lvZxNrg==",
+      "type": "package",
+      "path": "feliz.materialui/1.2.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable/Autocomplete.fs",
+        "fable/Bindings.fs",
+        "fable/Classes.fs",
+        "fable/Colors.fs",
+        "fable/Feliz.MaterialUI.fsproj",
+        "fable/Flatten.fs",
+        "fable/Hooks.fs",
+        "fable/Localization.fs",
+        "fable/Misc.fs",
+        "fable/Mui.fs",
+        "fable/Props.fs",
+        "fable/Styles.fs",
+        "fable/Theme.fs",
+        "fable/ThemeOverrides.fs",
+        "fable/ThemeProps.fs",
+        "feliz.materialui.1.2.6.nupkg.sha512",
+        "feliz.materialui.nuspec",
+        "lib/netstandard2.0/Feliz.MaterialUI.dll",
+        "lib/netstandard2.0/Feliz.MaterialUI.xml",
+        "paket-installmodel.cache"
+      ]
+    },
+    "FSharp.Core/5.0.2": {
+      "sha512": "DpcajqENgb3VXaHw1FKfVS+TWwEzck1PCajqLwBAVrtd1lfxd7T8JISVZBdV1mX9+2g48+tIgpNaVJWObdMrBw==",
+      "type": "package",
+      "path": "fsharp.core/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "contentFiles/any/netstandard2.0/FSharp.Core.xml",
+        "fsharp.core.5.0.2.nupkg.sha512",
+        "fsharp.core.nuspec",
+        "lib/netstandard2.0/FSharp.Core.dll",
+        "lib/netstandard2.0/FSharp.Core.xml",
+        "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/de/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/es/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/fr/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/it/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ja/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ko/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/pl/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ru/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll",
+        "paket-installmodel.cache"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "FSharp.Core >= 5.0.2",
+      "Fable.AST >= 3.1.1",
+      "Fable.Browser.Blob >= 1.1.4",
+      "Fable.Browser.Dom >= 2.4.4",
+      "Fable.Browser.Event >= 1.4.5",
+      "Fable.Browser.Gamepad >= 1.0.3",
+      "Fable.Browser.WebStorage >= 1.0.4",
+      "Fable.Core >= 3.2.8",
+      "Fable.Elmish >= 3.1.0",
+      "Fable.Form >= 1.1.0",
+      "Fable.Form.Simple >= 1.1.0",
+      "Fable.React >= 7.4.1",
+      "Feliz >= 1.49.0",
+      "Feliz.CompilerPlugins >= 1.5.0",
+      "Feliz.MaterialUI >= 1.2.6"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Terence\\.nuget\\packages\\": {},
@@ -54,6 +642,83 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "FSharp.Core": {
+            "target": "Package",
+            "version": "[5.0.2, )",
+            "generatePathProperty": true
+          },
+          "Fable.AST": {
+            "target": "Package",
+            "version": "[3.1.1, )",
+            "generatePathProperty": true
+          },
+          "Fable.Browser.Blob": {
+            "target": "Package",
+            "version": "[1.1.4, )",
+            "generatePathProperty": true
+          },
+          "Fable.Browser.Dom": {
+            "target": "Package",
+            "version": "[2.4.4, )",
+            "generatePathProperty": true
+          },
+          "Fable.Browser.Event": {
+            "target": "Package",
+            "version": "[1.4.5, )",
+            "generatePathProperty": true
+          },
+          "Fable.Browser.Gamepad": {
+            "target": "Package",
+            "version": "[1.0.3, )",
+            "generatePathProperty": true
+          },
+          "Fable.Browser.WebStorage": {
+            "target": "Package",
+            "version": "[1.0.4, )",
+            "generatePathProperty": true
+          },
+          "Fable.Core": {
+            "target": "Package",
+            "version": "[3.2.8, )",
+            "generatePathProperty": true
+          },
+          "Fable.Elmish": {
+            "target": "Package",
+            "version": "[3.1.0, )",
+            "generatePathProperty": true
+          },
+          "Fable.Form": {
+            "target": "Package",
+            "version": "[1.1.0, )",
+            "generatePathProperty": true
+          },
+          "Fable.Form.Simple": {
+            "target": "Package",
+            "version": "[1.1.0, )",
+            "generatePathProperty": true
+          },
+          "Fable.React": {
+            "target": "Package",
+            "version": "[7.4.1, )",
+            "generatePathProperty": true
+          },
+          "Feliz": {
+            "target": "Package",
+            "version": "[1.49.0, )",
+            "generatePathProperty": true
+          },
+          "Feliz.CompilerPlugins": {
+            "target": "Package",
+            "version": "[1.5.0, )",
+            "generatePathProperty": true
+          },
+          "Feliz.MaterialUI": {
+            "target": "Package",
+            "version": "[1.2.6, )",
+            "generatePathProperty": true
+          }
+        },
         "imports": [
           "net461",
           "net462",

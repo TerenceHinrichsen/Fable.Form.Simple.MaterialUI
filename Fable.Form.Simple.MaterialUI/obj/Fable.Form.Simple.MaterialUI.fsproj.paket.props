@@ -6,7 +6,7 @@
         <PaketPropsLoaded>true</PaketPropsLoaded>
     </PropertyGroup>
 
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v3.1') Or ($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v2.1')))">
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (($(TargetFrameworkIdentifier) == '.NETCoreApp' And ($(TargetFrameworkVersion) == 'v3.1' Or $(TargetFrameworkVersion) == 'v5.0')) Or ($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v2.1')))">
         <PackageReference Include="Fable.AST">
             <Version>3.1.1</Version>
         </PackageReference>
@@ -31,6 +31,9 @@
         <PackageReference Include="Fable.Browser.Dom">
             <Version>2.4.4</Version>
         </PackageReference>
+        <PackageReference Include="Fable.Elmish">
+            <Version>3.1</Version>
+        </PackageReference>
         <PackageReference Include="Fable.Form">
             <Version>1.1</Version>
         </PackageReference>
@@ -42,6 +45,9 @@
         </PackageReference>
         <PackageReference Include="Feliz">
             <Version>1.49</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Form.Simple">
+            <Version>1.1</Version>
         </PackageReference>
         <PackageReference Include="Feliz.MaterialUI">
             <Version>1.2.6</Version>

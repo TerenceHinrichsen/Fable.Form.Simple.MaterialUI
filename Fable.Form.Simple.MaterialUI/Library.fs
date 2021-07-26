@@ -6,12 +6,27 @@ module Form =
 
         open Fable.Form
         open Feliz
+        open Feliz.MaterialUI
         open Fable.Form.Simple
         open Fable.Form.Simple.Form.View
 
+        let form (config: FormConfig<'Msg>) =
+            Mui.formControl [
+                prop.children [ yield! config.Fields ]
+                prop.onSubmit (fun  ev ->
+
+                    ev.stopPropagation()
+                    ev.preventDefault()
+
+                    config.OnSubmit
+                    |> Option.map config.Dispatch
+                    |> Option.defaultWith ignore
+                    )
+            ]
+
         let htmlViewConfig<'Msg> : CustomConfig<'Msg> =
             {
-                Form = failwith "Not implemented yet"
+                Form = form
                 TextField = failwith "Not implemented yet"
                 PasswordField = failwith "Not implemented yet"
                 EmailField = failwith "Not implemented yet"

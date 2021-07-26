@@ -1,5 +1,5 @@
 STORAGE: NONE
-RESTRICTION: || (== netcoreapp3.1) (== netstandard2.0) (== netstandard2.1)
+RESTRICTION: || (== net50) (== netcoreapp3.1) (== netstandard2.0) (== netstandard2.1)
 NUGET
   remote: https://api.nuget.org/v3/index.json
     Fable.AST (3.1.1)
@@ -25,8 +25,17 @@ NUGET
       FSharp.Core (>= 4.7.2)
     Fable.Core (3.2.8)
       FSharp.Core (>= 4.7.2)
+    Fable.Elmish (3.1)
+      Fable.Core (>= 3.0)
+      FSharp.Core (>= 4.6.2)
     Fable.Form (1.1)
       Fable.Core (>= 3.2.5)
+      FSharp.Core (>= 4.7.2)
+    Fable.Form.Simple (1.1)
+      Fable.Core (>= 3.2.5)
+      Fable.Elmish (>= 3.1)
+      Fable.Form (>= 1.1)
+      Feliz (>= 1.40)
       FSharp.Core (>= 4.7.2)
     Fable.React (7.4.1)
       Fable.Browser.Dom (>= 2.4.4)
