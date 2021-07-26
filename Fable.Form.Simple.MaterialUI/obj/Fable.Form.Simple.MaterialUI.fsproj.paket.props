@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+        <PaketPropsVersion>5.185.3</PaketPropsVersion>
+        <PaketPropsLoaded>true</PaketPropsLoaded>
+    </PropertyGroup>
+
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v3.1') Or ($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v2.1')))">
+        <PackageReference Include="Fable.AST">
+            <Version>3.1.1</Version>
+        </PackageReference>
+        <PackageReference Include="FSharp.Core">
+            <Version>5.0.2</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Core">
+            <Version>3.2.8</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Browser.Blob">
+            <Version>1.1.4</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Browser.Gamepad">
+            <Version>1.0.3</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Browser.Event">
+            <Version>1.4.5</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Browser.WebStorage">
+            <Version>1.0.4</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Browser.Dom">
+            <Version>2.4.4</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.Form">
+            <Version>1.1</Version>
+        </PackageReference>
+        <PackageReference Include="Fable.React">
+            <Version>7.4.1</Version>
+        </PackageReference>
+        <PackageReference Include="Feliz.CompilerPlugins">
+            <Version>1.5</Version>
+        </PackageReference>
+        <PackageReference Include="Feliz">
+            <Version>1.49</Version>
+        </PackageReference>
+        <PackageReference Include="Feliz.MaterialUI">
+            <Version>1.2.6</Version>
+        </PackageReference>
+    </ItemGroup>
+</Project>
