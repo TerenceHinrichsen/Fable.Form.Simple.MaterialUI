@@ -23,6 +23,11 @@ module Form =
                 typography.children message
             ]
 
+        let wrapFieldLInContainer (children: List<ReactElement>) =
+            Mui.container [
+                prop.children children
+            ]
+
         let inputFieldBase type' (config: TextFieldConfig<'Msg>) =
               Mui.input [
                   input.type' type'
@@ -47,7 +52,9 @@ module Form =
                 | InputType.Text -> inputFieldBase "Text"
                 | InputType.Password -> inputFieldBase "Password"
                 | InputType.Email -> inputFieldBase "Email"
-            inputControl config
+
+            [fieldLabel config.Attributes.Label; inputControl config ]
+            |> wrapFieldLInContainer
 
 
         let form (config: FormConfig<'Msg>) =
@@ -90,14 +97,59 @@ module Form =
                 ]
             ]
 
+        let textAreaField (config: TextFieldConfig<'Msg>) =
+            let textField =
+              Mui.textField [
+                  prop.onChange (fun (text: string) -> config.OnChange text |> config.Dispatch)
+                  prop.disabled config.Disabled
+                  prop.value config.Value
+                  prop.placeholder config.Attributes.Placeholder
+                  textField.error (config.ShowError && config.Error.IsSome)
+
+                  match config.OnBlur with
+                  | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur)
+                  | None -> ()
+              ]
+            [fieldLabel config.Attributes.Label;  textField ]
+            |> wrapFieldLInContainer
+
+        let checkboxField (config : CheckboxFieldConfig<'Msg>) =
+           [ Mui.checkbox [
+                prop.onChange (fun (isChecked: bool) -> config.OnChange isChecked |> config.Dispatch)
+                prop.disabled config.Disabled
+                prop.isChecked config.Value
+
+                match config.OnBlur with
+                | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur)
+                | None -> ()
+              ]
+             fieldLabel config.Attributes.Text
+           ] |> wrapFieldLInContainer
+
+        let radioField (config: RadioFieldConfig<'Msg>) =
+            let radio (key: string, label : string) =
+                Mui.radio [
+                    prop.name config.Attributes.Label
+                    prop.isChecked (key = config.Value : bool)
+                    prop.disabled config.Disabled
+                    prop.onChange (fun (_: bool) -> config.OnChange key |> config.Dispatch)
+
+                    match config.OnBlur with
+                    | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur)
+                    | None -> ()
+                ]
+
+            radio
+
+
         let htmlViewConfig<'Msg> : CustomConfig<'Msg> =
             {
                 Form = form
                 TextField = inputField Text
                 PasswordField = inputField Password
                 EmailField = inputField Email
-                TextAreaField = failwith "Not implemented yet"
-                CheckboxField = failwith "Not implemented yet"
+                TextAreaField = textAreaField
+                CheckboxField = checkboxField
                 RadioField = failwith "Not implemented yet"
                 SelectField = failwith "Not implemented yet"
                 Group = failwith "Not implemented yet"
