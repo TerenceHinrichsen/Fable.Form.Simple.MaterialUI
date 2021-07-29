@@ -11,10 +11,7 @@ module Form =
         open Fable.Form.Simple.Form.View
 
         let fieldLabel (label: string) =
-            Mui.typography [
-                typography.variant.caption
-                typography.children label
-            ]
+            Mui.formControlLabel [ formControlLabel.label label ]
 
         let errorMessage (message : string) =
             Mui.typography [
@@ -127,9 +124,10 @@ module Form =
            ] |> wrapFieldLInContainer
 
         let radioField (config: RadioFieldConfig<'Msg>) =
+
             let radio (key: string, label : string) =
                 Mui.radio [
-                    prop.name config.Attributes.Label
+                    prop.name label
                     prop.isChecked (key = config.Value : bool)
                     prop.disabled config.Disabled
                     prop.onChange (fun (_: bool) -> config.OnChange key |> config.Dispatch)
@@ -139,8 +137,13 @@ module Form =
                     | None -> ()
                 ]
 
-            radio
-
+            [
+              fieldLabel config.Attributes.Label
+              Mui.radioGroup [
+                radioGroup.children (config.Attributes.Options |> List.map radio)
+                radioGroup.name config.Attributes.Label
+                radioGroup.value config.Value ]
+            ] |> wrapFieldLInContainer
 
         let htmlViewConfig<'Msg> : CustomConfig<'Msg> =
             {
@@ -150,7 +153,7 @@ module Form =
                 EmailField = inputField Email
                 TextAreaField = textAreaField
                 CheckboxField = checkboxField
-                RadioField = failwith "Not implemented yet"
+                RadioField = radioField
                 SelectField = failwith "Not implemented yet"
                 Group = failwith "Not implemented yet"
                 Section = failwith "Not implemented yet"
