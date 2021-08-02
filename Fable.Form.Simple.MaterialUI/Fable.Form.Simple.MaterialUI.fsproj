@@ -8,6 +8,9 @@
   <ItemGroup>
     <Compile Include="Form.fsi" />
     <Compile Include="Form.fs" />
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
