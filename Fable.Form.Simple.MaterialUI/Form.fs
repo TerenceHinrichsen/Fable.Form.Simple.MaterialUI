@@ -4,10 +4,8 @@
 module Form =
     module View =
 
-        open Fable.Form
         open Feliz
         open Feliz.MaterialUI
-        open Fable.Form.Simple
         open Fable.Form.Simple.Form.View
 
         let fieldLabel (label: string) =
@@ -21,7 +19,7 @@ module Form =
             ]
 
         let wrapFieldLInContainer (children: List<ReactElement>) =
-            Mui.container [
+            Mui.formControl [
                 prop.children children
             ]
 
@@ -55,8 +53,7 @@ module Form =
 
 
         let form (config: FormConfig<'Msg>) =
-            Mui.formControl [
-
+            Html.form [
                 prop.onSubmit (fun  ev ->
 
                     ev.stopPropagation()
@@ -145,6 +142,89 @@ module Form =
                 radioGroup.value config.Value ]
             ] |> wrapFieldLInContainer
 
+        let selectField (config: SelectFieldConfig<'Msg>) =
+            [
+              Mui.select [
+                  select.id config.Attributes.Label
+                  select.value config.Value
+                  select.onChange (fun newValue -> config.OnChange newValue |> config.Dispatch)
+
+                  select.placeholder config.Attributes.Placeholder
+
+                  match config.OnBlur with
+                  | Some onBlur -> select.onBlur (fun _ -> config.Dispatch onBlur)
+                  | None -> ()
+
+                  select.children (
+                      config.Attributes.Options
+                      |> List.map (fun  (key: string, label: string) ->
+                          Mui.menuItem [
+                              menuItem.children label
+                              prop.value key ]
+                          )
+                      )
+              ]
+
+              fieldLabel config.Attributes.Label
+            ] |> wrapFieldLInContainer
+
+
+        let formGroup (fields: List<ReactElement>) =
+            Mui.formGroup [ formGroup.children fields ]
+
+        let section (title: string) (fields: List<ReactElement>) =
+            Mui.formGroup [
+                prop.text title
+
+                prop.children [
+                    Html.legend [ prop.text title ]
+                    yield! fields
+                ]
+            ]
+
+        open Fable.MaterialUI.Icons
+
+        let formList (config: FormListConfig<'Msg>) =
+            let addButton =
+              match config.Disabled, config.Add with
+              | false, Some add ->
+                  Mui.iconButton [
+                      iconButton.size.small
+                      prop.onClick (fun _ -> add.Action() |> config.Dispatch)
+                      prop.children [
+                        addIcon []
+                        fieldLabel add.Label
+                        ]
+                  ]
+              | _ -> Html.none
+
+            Mui.container [
+                fieldLabel config.Label
+                yield! config.Forms
+                addButton
+            ]
+
+        let formListItem (config: FormListItemConfig<'Msg>) =
+            let deleteButton =
+              match config.Disabled, config.Delete with
+              | false, Some delete ->
+                  Mui.iconButton [
+                      iconButton.size.small
+                      prop.onClick (fun _ -> delete.Action() |> config.Dispatch)
+                      prop.children [
+                        deleteIcon []
+                        fieldLabel delete.Label
+                        ]
+                  ]
+              | _ -> Html.none
+
+            Mui.container [
+                prop.children [
+                    yield! config.Fields
+                    deleteButton
+                ]
+            ]
+
         let htmlViewConfig<'Msg> : CustomConfig<'Msg> =
             {
                 Form = form
@@ -154,11 +234,11 @@ module Form =
                 TextAreaField = textAreaField
                 CheckboxField = checkboxField
                 RadioField = radioField
-                SelectField = failwith "Not implemented yet"
-                Group = failwith "Not implemented yet"
-                Section = failwith "Not implemented yet"
-                FormList = failwith "Not implemented yet"
-                FormListItem = failwith "Not implemented yet"
+                SelectField = selectField
+                Group = formGroup
+                Section = section
+                FormList = formList
+                FormListItem = formListItem
             }
 
         // Function which will be called by the consumer to render the form

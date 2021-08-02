@@ -9,6 +9,7 @@ Fable.Browser.Dom,2.4.4,Transitive,Main,false,true
 Fable.Elmish,3.1,Transitive,Main,false,true
 Fable.Form,1.1,Direct,Main,false,true
 Fable.React,7.4.1,Transitive,Main,false,true
+Fable.MaterialUI.Icons,1.3,Direct,Main,false,true
 Feliz.CompilerPlugins,1.5,Transitive,Main,false,true
 Feliz,1.49,Transitive,Main,false,true
 Fable.Form.Simple,1.1,Direct,Main,false,true

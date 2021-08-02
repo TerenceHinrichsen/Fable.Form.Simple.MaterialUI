@@ -39,6 +39,7 @@
     <PkgFable_React Condition=" '$(PkgFable_React)' == '' ">C:\Users\Terence\.nuget\packages\fable.react\7.4.1</PkgFable_React>
     <PkgFeliz Condition=" '$(PkgFeliz)' == '' ">C:\Users\Terence\.nuget\packages\feliz\1.49.0</PkgFeliz>
     <PkgFeliz_MaterialUI Condition=" '$(PkgFeliz_MaterialUI)' == '' ">C:\Users\Terence\.nuget\packages\feliz.materialui\1.2.6</PkgFeliz_MaterialUI>
+    <PkgFable_MaterialUI_Icons Condition=" '$(PkgFable_MaterialUI_Icons)' == '' ">C:\Users\Terence\.nuget\packages\fable.materialui.icons\1.3.0</PkgFable_MaterialUI_Icons>
     <PkgFable_Form Condition=" '$(PkgFable_Form)' == '' ">C:\Users\Terence\.nuget\packages\fable.form\1.1.0</PkgFable_Form>
     <PkgFable_Elmish Condition=" '$(PkgFable_Elmish)' == '' ">C:\Users\Terence\.nuget\packages\fable.elmish\3.1.0</PkgFable_Elmish>
     <PkgFable_Form_Simple Condition=" '$(PkgFable_Form_Simple)' == '' ">C:\Users\Terence\.nuget\packages\fable.form.simple\1.1.0</PkgFable_Form_Simple>

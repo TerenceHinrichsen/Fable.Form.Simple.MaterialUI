@@ -5,3 +5,4 @@ framework: net5.0, netcoreapp3.1, netstandard2.0, netstandard2.1
 nuget Fable.Form
 nuget Fable.Form.Simple
 nuget Feliz.MaterialUI
+nuget Fable.MaterialUI.Icons
