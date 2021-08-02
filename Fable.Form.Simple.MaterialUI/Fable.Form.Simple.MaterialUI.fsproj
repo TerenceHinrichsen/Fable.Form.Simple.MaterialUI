@@ -3,7 +3,17 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>Fable.Form.Simple.MaterialUI</PackageId>
+    <Title>Fable.Form.Simple.MaterialUI</Title>
+    <Version>0.0.1</Version>
+    <Authors>Terence Hinrichsen</Authors>
+    <Company>Terence Hinrichsen</Company>
     <WarnOn>3390;$(WarnOn)</WarnOn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <Description>
+      This library is a Material UI implementation of Fable.Form.Simple written in F#.
+    </Description>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Form.fsi" />
@@ -11,6 +21,7 @@
     <Content Include="..\README.md">
       <Link>README.md</Link>
     </Content>
+    <Content Include="LICENSE.md" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
