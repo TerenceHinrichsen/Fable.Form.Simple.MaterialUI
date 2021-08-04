@@ -184,13 +184,13 @@ module Form =
 
         open Fable.MaterialUI.Icons
 
-        let formList (config: FormListConfig<'Msg>) =
+        let formList (formConfig: FormListConfig<'Msg>) =
             let addButton =
-              match config.Disabled, config.Add with
+              match formConfig.Disabled, formConfig.Add with
               | false, Some add ->
                   Mui.iconButton [
                       iconButton.size.small
-                      prop.onClick (fun _ -> add.Action() |> config.Dispatch)
+                      prop.onClick (fun _ -> add.Action() |> formConfig.Dispatch)
                       prop.children [
                         addIcon []
                         fieldLabel add.Label
@@ -199,8 +199,8 @@ module Form =
               | _ -> Html.none
 
             Mui.container [
-                fieldLabel config.Label
-                yield! config.Forms
+                fieldLabel formConfig.Label
+                yield! formConfig.Forms
                 addButton
             ]
 

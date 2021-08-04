@@ -5,7 +5,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>Fable.Form.Simple.MaterialUI</PackageId>
     <Title>Fable.Form.Simple.MaterialUI</Title>
-    <Version>0.0.1</Version>
     <Authors>Terence Hinrichsen</Authors>
     <Company>Terence Hinrichsen</Company>
     <WarnOn>3390;$(WarnOn)</WarnOn>
@@ -14,6 +13,10 @@
     <Description>
       This library is a Material UI implementation of Fable.Form.Simple written in F#.
     </Description>
+    <Version>0.0.2</Version>
+    <PackageReleaseNotes>
+      Fix naming errors on FSI file.
+    </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Form.fsi" />
