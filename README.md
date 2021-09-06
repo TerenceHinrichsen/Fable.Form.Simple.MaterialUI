@@ -8,6 +8,7 @@ Using the excellent for of [Fable.Form](https://github.com/MangelMaxime/Fable.Fo
 ```
 npm install @material-ui/core
 npm install @material-ui/lab
+npm install @material-ui/icons
 ```
 
 __DISCLAIMER__: I have created this simple opinionated implementation for MaterialUI for my own use, some of the implementations of the MaterialUI elements might not match 100% with all requirements, but they work for me. Let me know where I have erred and I we will fix it. 

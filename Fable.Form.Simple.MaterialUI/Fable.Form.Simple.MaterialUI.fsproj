@@ -8,14 +8,15 @@
     <Authors>Terence Hinrichsen</Authors>
     <Company>Terence Hinrichsen</Company>
     <WarnOn>3390;$(WarnOn)</WarnOn>
+    <RepositoryUrl>https://github.com/TerenceHinrichsen/Fable.Form.Simple.MaterialUI</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Description>
       This library is a Material UI implementation of Fable.Form.Simple written in F#.
     </Description>
-    <Version>0.0.2</Version>
+    <Version>0.0.6</Version>
     <PackageReleaseNotes>
-      Fix naming errors on FSI file.
+      Add "fable" folder as explained in "Author a Fable library". Thanks @MangelMaxime
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
@@ -25,6 +26,7 @@
       <Link>README.md</Link>
     </Content>
     <Content Include="LICENSE.md" />
+    <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

@@ -1,6 +1,6 @@
 Fable.AST,3.1.1,Transitive,Main,false,true
 FSharp.Core,5.0.2,Transitive,Main,false,true
-Fable.Core,3.2.8,Transitive,Main,false,true
+Fable.Core,3.2.8,Direct,Main,false,true
 Fable.Browser.Blob,1.1.4,Transitive,Main,false,true
 Fable.Browser.Gamepad,1.0.3,Transitive,Main,false,true
 Fable.Browser.Event,1.4.5,Transitive,Main,false,true
@@ -10,7 +10,7 @@ Fable.Elmish,3.1,Transitive,Main,false,true
 Fable.Form,1.1,Direct,Main,false,true
 Fable.React,7.4.1,Transitive,Main,false,true
 Fable.MaterialUI.Icons,1.3,Direct,Main,false,true
-Feliz.CompilerPlugins,1.5,Transitive,Main,false,true
-Feliz,1.49,Transitive,Main,false,true
+Feliz.CompilerPlugins,1.6,Transitive,Main,false,true
+Feliz,1.50,Direct,Main,false,true
 Fable.Form.Simple,1.1,Direct,Main,false,true
 Feliz.MaterialUI,1.2.6,Direct,Main,false,true

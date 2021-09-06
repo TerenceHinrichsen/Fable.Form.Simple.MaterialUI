@@ -6,6 +6,8 @@ module Form =
 
         open Feliz
         open Feliz.MaterialUI
+        open Fable.Form
+        open Fable.Form.Simple
         open Fable.Form.Simple.Form.View
 
         let fieldLabel (label: string) =
@@ -23,7 +25,7 @@ module Form =
                 prop.children children
             ]
 
-        let inputFieldBase type' (config: TextFieldConfig<'Msg>) =
+        let inputFieldBase type' (config: Form.View.TextFieldConfig<'Msg>) =
               Mui.input [
                   input.type' type'
                   prop.onChange (fun (text : string) -> config.OnChange text |> config.Dispatch)
