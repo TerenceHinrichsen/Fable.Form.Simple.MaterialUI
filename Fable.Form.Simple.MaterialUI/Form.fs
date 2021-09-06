@@ -7,38 +7,48 @@ module Form =
         open Feliz
         open Feliz.MaterialUI
         open Fable.Form
-        open Fable.Form.Simple
         open Fable.Form.Simple.Form.View
 
         let fieldLabel (label: string) =
-            Mui.formControlLabel [ formControlLabel.label label ]
+            Mui.formControlLabel
+                [ formControlLabel.control ( Mui.typography label ) ]
 
         let errorMessage (message : string) =
-            Mui.typography [
-                typography.color.error
-                typography.variant.body1
-                typography.children message
-            ]
+            Mui.formHelperText message
+
+        let errorMessageAsString (showError : bool) (error : Error.Error option) =
+          match error with
+          | Some (Error.External externalError) -> externalError
+          | _ ->
+              if showError then
+                  error
+                  |> Option.map errorToString
+                  |> Option.defaultValue ""
+              else
+                  "There was no error"
 
         let wrapFieldLInContainer (children: List<ReactElement>) =
-            Mui.formControl [
-                prop.children children
+            Mui.container [ prop.children children ]
+
+        let textInputField type' (config: TextFieldConfig<'Msg>) =
+            Mui.textField [
+
+                textField.type' type'
+                textField.fullWidth true
+                textField.label config.Attributes.Label
+
+                textField.error (config.ShowError && config.Error.IsSome)
+                textField.helperText (errorMessageAsString config.ShowError config.Error)
+
+                prop.onChange (fun (text : string) -> config.OnChange text |> config.Dispatch)
+                match config.OnBlur with
+                | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur )
+                | None -> ()
+
+                prop.disabled config.Disabled
+                prop.value config.Value
+                prop.placeholder config.Attributes.Placeholder
             ]
-
-        let inputFieldBase type' (config: Form.View.TextFieldConfig<'Msg>) =
-              Mui.input [
-                  input.type' type'
-                  prop.onChange (fun (text : string) -> config.OnChange text |> config.Dispatch)
-
-                  match config.OnBlur with
-                  | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur )
-                  | None -> ()
-
-                  prop.disabled config.Disabled
-                  prop.value config.Value
-                  prop.placeholder config.Attributes.Placeholder
-                  input.error (config.ShowError && config.Error.IsSome)
-              ]
 
         let inputField
             (typ : InputType)
@@ -46,47 +56,50 @@ module Form =
 
             let inputControl  =
                 match typ with
-                | InputType.Text -> inputFieldBase "Text"
-                | InputType.Password -> inputFieldBase "Password"
-                | InputType.Email -> inputFieldBase "Email"
+                | InputType.Text -> textInputField "Text"
+                | InputType.Password -> textInputField "Password"
+                | InputType.Email -> textInputField "Email"
 
-            [fieldLabel config.Attributes.Label; inputControl config ]
-            |> wrapFieldLInContainer
-
+            inputControl config
 
         let form (config: FormConfig<'Msg>) =
             Html.form [
                 prop.onSubmit (fun  ev ->
-
                     ev.stopPropagation()
                     ev.preventDefault()
 
                     config.OnSubmit
                     |> Option.map config.Dispatch
-                    |> Option.defaultWith ignore
-                    )
+                    |> Option.defaultWith ignore )
 
                 prop.children [
                     yield! config.Fields
 
                     match config.State with
-                    | Error error -> errorMessage error
+                    | Error error ->
+                        Mui.alert [
+                            alert.variant.filled
+                            alert.color.error
+                            alert.component' error ]
                     | Success success ->
                         Mui.alert [
                             alert.color.success
-                            alert.component' success
-                        ]
+                            alert.component' success ]
                     | Loading
                     | Idle -> Html.none
 
-                    Mui.divider [
+                    Mui.container [
                         prop.children [
                             Mui.button [
                                 button.color.primary
+                                button.variant.contained
+                                prop.onClick (fun _ ->
+                                    config.OnSubmit
+                                    |> Option.map config.Dispatch
+                                    |> Option.defaultWith ignore )
                                 button.children [
-                                    if config.State = Loading then Mui.circularProgress[]
-                                    fieldLabel config.Action
-                                    ]
+                                  if config.State = Loading then Mui.circularProgress[]
+                                  Mui.typography config.Action ]
                             ]
                         ]
                     ]
@@ -106,21 +119,26 @@ module Form =
                   | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur)
                   | None -> ()
               ]
-            [fieldLabel config.Attributes.Label;  textField ]
+            [fieldLabel config.Attributes.Label; textField ]
             |> wrapFieldLInContainer
 
         let checkboxField (config : CheckboxFieldConfig<'Msg>) =
-           [ Mui.checkbox [
-                prop.onChange (fun (isChecked: bool) -> config.OnChange isChecked |> config.Dispatch)
-                prop.disabled config.Disabled
-                prop.isChecked config.Value
 
-                match config.OnBlur with
-                | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur)
-                | None -> ()
-              ]
-             fieldLabel config.Attributes.Text
-           ] |> wrapFieldLInContainer
+           [
+             Mui.formControlLabel [
+                 formControlLabel.control (
+                   Mui.checkbox [
+                      prop.onChange (fun (isChecked: bool) -> config.OnChange isChecked |> config.Dispatch)
+                      prop.disabled config.Disabled
+                      checkbox.color.primary
+                      prop.isChecked config.Value
+
+                      match config.OnBlur with
+                      | Some onBlur -> prop.onBlur (fun _ -> config.Dispatch onBlur)
+                      | None -> ()
+                    ] )
+                 formControlLabel.label config.Attributes.Text
+                 ] ] |> wrapFieldLInContainer
 
         let radioField (config: RadioFieldConfig<'Msg>) =
 

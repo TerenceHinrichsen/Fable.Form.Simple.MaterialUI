@@ -14,9 +14,9 @@
     <Description>
       This library is a Material UI implementation of Fable.Form.Simple written in F#.
     </Description>
-    <Version>0.0.6</Version>
+    <Version>0.0.7</Version>
     <PackageReleaseNotes>
-      Add "fable" folder as explained in "Author a Fable library". Thanks @MangelMaxime
+      Basic text input fields now showing helper text on error.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
