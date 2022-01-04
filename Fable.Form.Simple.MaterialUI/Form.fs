@@ -7,6 +7,7 @@ module Form =
         open Feliz
         open Feliz.MaterialUI
         open Fable.Form
+        open Fable.Form.Simple
         open Fable.Form.Simple.Form.View
 
         let fieldLabel (label: string) =
@@ -30,7 +31,7 @@ module Form =
         let wrapFieldLInContainer (children: List<ReactElement>) =
             Mui.container [ prop.children children ]
 
-        let textInputField type' (config: TextFieldConfig<'Msg>) =
+        let textInputField type' (config: TextFieldConfig<'Msg, IReactProperty>) =
             Mui.textField [
 
                 textField.type' type'
@@ -52,13 +53,20 @@ module Form =
 
         let inputField
             (typ : InputType)
-            (config: TextFieldConfig<'Msg> ) =
+            (config: TextFieldConfig<'Msg, IReactProperty> ) =
 
             let inputControl  =
                 match typ with
                 | InputType.Text -> textInputField "Text"
                 | InputType.Password -> textInputField "Password"
                 | InputType.Email -> textInputField "Email"
+                | InputType.Color -> textInputField "Color"
+                | InputType.Date -> textInputField "Date"
+                | InputType.DateTimeLocal -> textInputField "DateTimeLocal"
+                | InputType.Number -> textInputField "Number"
+                | InputType.Search -> textInputField "Range"
+                | InputType.Tel -> textInputField "Tel"
+                | InputType.Time -> textInputField "Time"
 
             inputControl config
 
@@ -106,7 +114,7 @@ module Form =
                 ]
             ]
 
-        let textAreaField (config: TextFieldConfig<'Msg>) =
+        let textAreaField (config: TextFieldConfig<'Msg, IReactProperty>) =
             let textField =
               Mui.textField [
                   prop.onChange (fun (text: string) -> config.OnChange text |> config.Dispatch)
@@ -245,7 +253,7 @@ module Form =
                 ]
             ]
 
-        let htmlViewConfig<'Msg> : CustomConfig<'Msg> =
+        let htmlViewConfig<'Msg> : CustomConfig<'Msg, IReactProperty> =
             {
                 Form = form
                 TextField = inputField Text
@@ -255,6 +263,13 @@ module Form =
                 CheckboxField = checkboxField
                 RadioField = radioField
                 SelectField = selectField
+                ColorField = inputField Color
+                DateField = inputField Date
+                DateTimeLocalField = inputField DateTimeLocal
+                NumberField = inputField Number
+                SearchField = inputField Search
+                TelField = inputField Tel
+                TimeField = inputField Time
                 Group = formGroup
                 Section = section
                 FormList = formList
